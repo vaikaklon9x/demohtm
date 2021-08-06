@@ -1,0 +1,141 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+    font-family: 'Baloo Chettan 2',cursive;
+}
+:root{
+    --color1:rgb(161, 161, 219);
+}
+li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+header {
+    width: 100vw;
+    height: 100vh;
+    background: url("img/anh1.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+header::before {
+    position:absolute;
+    width: 100%;
+    height: 100%;
+    content:"";
+    display: block;
+    background: rgba(0, 0,0,0.5);
+}
+header input {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    opacity: 0;
+    z-index: 2;
+    cursor: pointer;
+    position: fixed ;
+}
+header input:checked ~ .menu-icon .menu-line{
+    transform:rotate(135deg);
+    transition: 0.5s;
+}
+header input:checked ~ .menu-icon .menu-line::before{
+    transform:rotate(90deg);
+    top: 0;
+}
+header input:checked ~ .menu-icon .menu-line::after{
+    transform:rotate(90deg);
+    top: 0;
+}
+header input:checked ~ .menu-item{
+    right: 0;
+    transition: 0.2s;
+}
+.menu-icon{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    opacity: 1;
+    z-index: 1;
+    cursor: pointer;
+    position: fixed ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.menu-line{
+    height: 5px;
+    width: 100%;
+    background: var(--color1);
+    position: relative;
+}
+.menu-line::before{
+    content: "";
+    display: block;
+    width: 100%;
+    height :5px;
+    position: absolute;
+    background: var(--color1);
+    top: -15px;
+}
+.menu-line::after{
+    content: "";
+    display: block;
+    width: 100%;
+    height :5px;
+    position: absolute;
+    background: var(--color1);
+    top: 15px;
+}
+.menu-item{
+    position:fixed;
+    width: 300px;
+    height: 100vh;
+    background: rgba(0, 0,0,0.5);
+    top: 0;
+    right: -1000%;
+    display: flex;
+    justify-content:center;
+    text-align: center;
+    align-items: center;
+    z-index: 10;
+    flex-direction: column;
+}
+.menu-item li{
+    line-height: 40px;
+}
+.menu-item li a{
+    color: var(--color1);
+}
+.header-text{
+    position: absolute;
+}
+.header-text h2{
+    font-size: 50px;
+    color:white;
+    margin-bottom: 25px;
+}
+.header-text a{
+    padding: 10px 25px;
+    background:white;
+    color: #000;
+    border-radius: 30px;
+    font-size: 30px;
+    opacity: 0.7;
+}
+.header-text a:hover{
+    background:rgb(194, 163, 163);
+    color: rgba(0, 0, 0, 0.856);
+}
